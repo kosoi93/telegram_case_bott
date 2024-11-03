@@ -1,0 +1,11 @@
+from cryptography.fernet import Fernet
+
+def load_key():
+    """Load the previously generated key."""
+    with open("encryption_key.key", "rb") as key_file:
+        key = key_file.read()
+    return key
+
+if __name__ == "__main__":
+    encryption_key = load_key()
+    print(f"Encryption Key: {encryption_key.decode()}")
